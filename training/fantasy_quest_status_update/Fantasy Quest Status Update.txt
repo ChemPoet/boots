@@ -1,0 +1,45 @@
+Prompt:
+It has been a while since I completed the "Introduction to Python programming" course here on boot.dev and I want to review the course content before I continue with the bookbot module.
+Please generate a sequential series of challenges, with the "Fantasy Quest" theme from the Python course, that will assist me in systematically reviewing all of the topics that we covered throughout the "Introduction to Python programming" course.
+If you want or need any additional information, please feel free to ask for additional input.
+
+
+Response:
+Fantasy Quest Status Update
+Complete the quest_status function.
+
+A hero starts with some gold and health.
+
+During the scene:
+
+1. The hero buys one shop item, so the item cost is subtracted from their gold.
+2. The hero takes damage in a small battle, so the damage is subtracted from their health.
+3. Return a formatted status message with the updated values.
+
+Return the message in exactly this format:
+    "Gold: 12, Health: 7"
+
+Use basic arithmetic and an f-string to build the result.
+
+Function behavior
+The function takes 4 numbers:
+
+* starting_gold
+* item_cost
+* starting_health
+* battle_damage
+
+It should return a string showing:
+
+* updated gold
+* updated health
+
+Example
+    result = quest_status(20, 5, 14, 3)
+    print(result)
+    # Gold: 15, Health: 11
+
+Another example:
+    result = quest_status(8, 8, 10, 0)
+    print(result)
+    # Gold: 0, Health: 10

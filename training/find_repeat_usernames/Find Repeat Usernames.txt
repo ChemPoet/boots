@@ -1,0 +1,32 @@
+Find Repeated Usernames
+Complete the find_repeated_usernames function.
+
+It should take a list of usernames and return a new list containing only the usernames that appear more than once.
+
+Rules:
+
+Keep the order of each name's first duplicate appearance
+Include each repeated username only once
+Use sets to track which names you have seen
+Example:
+
+usernames = ["ana", "bo", "ana", "cy", "bo", "ana"]
+print(find_repeated_usernames(usernames))
+# ["ana", "bo"]
+
+Why?
+
+"ana" becomes a duplicate when it appears the second time
+"bo" becomes a duplicate later
+"ana" should not be added again
+What to do
+Create a set to track usernames you've seen before.
+Create another set to track which duplicates you've already added to the result.
+Loop through the input list.
+When a username appears again for the first time, add it to the result.
+Return the result list.
+Your tests will check:
+
+* empty input
+* all usernames unique
+* repeated usernames
