@@ -1,34 +1,29 @@
-from main import calculate_order_total
+from find_repeat_usernames.main import *
 
 run_cases = [
-    (80, "regular", False, "standard", 80),
-    (70, "member", True, "express", 70),
+    (["ana", "bo", "ana", "cy", "bo", "ana"], ["ana", "bo"]),
+    (["kai", "mira", "sol"], []),
+    (["ivy", "ivy", "leo", "mira", "leo"], ["ivy", "leo"]),
 ]
 
 submit_cases = run_cases + [
-    (5, "vip", True, "pickup", 0),
-    (105, "member", True, "standard", 90),
-    (140, "vip", True, "express", 130),
+    ([], []),
+    (["zoe", "zoe", "zoe", "zoe"], ["zoe"]),
+    (["rex", "nova", "rex", "pix", "nova", "luna", "pix"], ["rex", "nova", "pix"]),
 ]
 
 
-def test(subtotal, customer_type, has_coupon, shipping_method, expected):
+def test(usernames, expected_output):
     print("---------------------------------")
-    print(f"Subtotal:        ${subtotal}")
-    print(f"Customer type:   {customer_type}")
-    print(f"Has coupon:      {has_coupon}")
-    print(f"Shipping method: {shipping_method}")
+    print(f"Input: {usernames}")
     print("")
-    result = calculate_order_total(
-        subtotal, customer_type, has_coupon, shipping_method
-    )
-    print(f"Expected: ${expected}")
-    print(f"Actual:   ${result}")
-    if result == expected:
-        print("Pass")
+    result = find_repeated_usernames(usernames)
+    print(f"Expected: {expected_output}")
+    print(f"Actual:   {result}")
+    if result == expected_output:
         return True
-    print("Fail")
     return False
+
 
 
 def main():
@@ -39,8 +34,10 @@ def main():
         correct = test(*test_case)
         if correct:
             passed += 1
+            print("Pass")
         else:
             failed += 1
+            print("Fail")
     if failed == 0:
         print("============= PASS ==============")
     else:
@@ -49,6 +46,7 @@ def main():
         print(f"{passed} passed, {failed} failed, {skipped} skipped")
     else:
         print(f"{passed} passed, {failed} failed")
+
 
 
 test_cases = submit_cases
