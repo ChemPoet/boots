@@ -1,4 +1,4 @@
-from main import *
+from find_repeat_usernames.main import *
 
 run_cases = [
     (["ana", "bo", "ana", "cy", "bo", "ana"], ["ana", "bo"]),
