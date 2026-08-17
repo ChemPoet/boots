@@ -1,21 +1,5 @@
 def calculate_total(order: dict[str, int], prices: dict[str, int], coupon=None):
-    # order = [item: str, quant: int]
-    # Confirm quant >= 0
-    # price = [item: str, cost: int]
-    # coupon = [None, "SAVE10", "HALF"]
     
-    # Flow -> item in order -> quant >= 0
-    #               |
-    #       price of item -> item in price
-    #               |
-    #       cost = quant * price
-    # var = cost    |
-    #       subtotal = sum of costs
-    # var = subtotal|
-    #          apply coupon -> None, (-10), (/2), Invalid
-    #               |
-    #           Final Total
-    # var = total
     cost = 0
     cart:list = []
     subtotal = 0
@@ -24,7 +8,6 @@ def calculate_total(order: dict[str, int], prices: dict[str, int], coupon=None):
     for key, value in order.items():
         if value > 0:
             cart.append(key)
-            #print(cart)
         elif value < 0:
             raise ValueError(f"Invalid quantity for '{key}'")
 
@@ -33,19 +16,15 @@ def calculate_total(order: dict[str, int], prices: dict[str, int], coupon=None):
             if prices[item] >= 0:
                 cost = order[item] * prices[item]
                 subtotal += cost
-                #print(subtotal)
         except:
             raise KeyError(f"Unknown item: '{item}'")
     
 
     if coupon == None:
-        #print(f"Subtotal:{subtotal}")
         total = subtotal
     elif coupon == "SAVE10":
-        #print(f"Subtotal:{subtotal}")
         total = max(0, subtotal - 10)
     elif coupon == "HALF":
-        #print(f"Subtotal:{subtotal}")
         total = subtotal//2
     else:
         raise ValueError("Invalid coupon")
