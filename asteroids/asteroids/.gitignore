@@ -10,6 +10,8 @@ __pycache__/
 #   intended to run in multiple environments; otherwise, check them in:
 # .python-version
 
+# JSON Lines log files
+game_events.jsonl
 
 # UV
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
