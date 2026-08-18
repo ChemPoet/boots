@@ -12,6 +12,7 @@ __pycache__/
 
 # JSON Lines log files
 game_events.jsonl
+game_state.jsonl
 
 # UV
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
