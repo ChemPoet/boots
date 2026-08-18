@@ -7,6 +7,7 @@ from asteroidfield import AsteroidField
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_event, log_state
 from player import Player
+from shot import Shot
 
 
 def main():
@@ -24,12 +25,14 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
     # You can iterate over objects in a group
     
     #CONTAINERS
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
+    Shot.containers = (shots, updatable, drawable)
     # Player is the name of the class, not an instance of it
     # All future instances of Player are in the Groups (updatable) and (drawable)
     
@@ -57,6 +60,12 @@ def main():
                 print("Game over!")
                 sys.exit()
         
+        for obj in asteroids:
+            for bullet in shots:
+                if bullet.collides_with(obj):
+                    log_event("asteroid_shot")
+                    bullet.kill()
+                    obj.kill()
         
         screen.fill("black")
         for fig in drawable:
