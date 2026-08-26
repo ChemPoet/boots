@@ -1,18 +1,40 @@
 class Entity:
     def __init__(self, entity_id, name):
-        pass
+        self.entity_id: str = entity_id
+        self.name: str = name
+        self.id_set: set[str] = []
+        self.catalogue: dict[(str, str),] = [(self.entity_id, self.name),]
+        
+            
     #   each entity_id must be unique str
     #   name cannot be empty str
 
     def update(self, changes):
-        pass
+        #Field updates
+        if len(self.name) < 1:
+            raise ValueError("invalid name")
+        
+        if self.entity_id in self.id_set:
+            raise ValueError(f"duplicate entity: {self.entity_id}")
+        
+        self.id_set.add(self.entity_id)
+        self.catalogue[self.entity_id] = [self.name]
+        
+        #Error Handling
+        if changes != self.entity_id or self.name:
+            raise ValueError(f"unknown field: {changes}")
+        
+        
     #   ONLY entity name and type-specific field may be updated
     #   Reject unknow fields and invalid values (entity_id, name)
 
 
 class Material(Entity):
     def __init__(self, entity_id, name, quantity):
-        pass
+        super().__init__(entity_id, name)
+        self.__quant: int = quantity
+        if self.__quant < 0:
+            raise ValueError("invalid quantity")
     # import entity class definitions and methods
     #   quantity must be int > 0
 
