@@ -1,7 +1,7 @@
 Glad that phrasing clicked. Here's a progression of standalone exercises, each isolating that exact "seen-so-far excludes right now" mechanic, going from simple tracing to writing your own code.
 
 **Exercise 1: Trace only, no coding**
-Trace this by hand, writing down the value of running_max before and after each iteration:
+Trace this by hand, writing down the value of `running_max` before and after each iteration:
 
 def running_max(numbers):
     running_max = None
@@ -47,20 +47,20 @@ Without fixing it yet — why will this always return the very first number in t
 
 
 **Exercise 3: Write it yourself — “first duplicate character”**
-Write a function first_duplicate_char(text) that returns the first character in a string that has appeared before, or None if there are no repeats.
+Write a function `first_duplicate_char(text)` that returns the first character in a string that has appeared before, or None if there are no repeats.
 
 first_duplicate_char("abca")   # "a" (it appeared at index 0, then again at index 3)
 first_duplicate_char("abcd")   # None
 first_duplicate_char("xxy")    # "x"
 
-Use the same shape as first_number_seen_twice from earlier. Before you write any code, answer this: for each character, what do you check first, and what do you do second?
+Use the same shape as `first_number_seen_twice` from earlier. Before you write any code, answer this: for each character, what do you check first, and what do you do second?
 
 # First check: Whether the character appeared previously in this string at an earlier index position (i.e., is it present in the set of seen characters)? If yes, return the duplicate character as an output.
 # Second check: If the character has not been seen before, add it to the set of seen characters. 
 
 
 **Exercise 4: A twist — “seen so far” going the other direction**
-This one flips it slightly, to test if you can spot the pattern even when it's not about duplicates. Write is_increasing(numbers), returning True if every number is strictly greater than the one before it.
+This one flips it slightly, to test if you can spot the pattern even when it's not about duplicates. Write `is_increasing(numbers)`, returning True if every number is strictly greater than the one before it.
 
 is_increasing([1, 2, 3, 10])  # True
 is_increasing([1, 2, 2, 3])   # False

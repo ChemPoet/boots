@@ -1,6 +1,9 @@
 class Entity:
     def __init__(self, entity_id, name):
-        pass
+        self.entity_id: str = entity_id
+        self.name: str = name
+        self.id_set: set[str] = []
+        self.catalogue: dict[(str, str),] = [(self.entity_id, self.name),]
 
     def update(self, changes):
         pass
@@ -8,7 +11,9 @@ class Entity:
 
 class Material(Entity):
     def __init__(self, entity_id, name, quantity):
-        pass
+        super().__init__(entity_id, name)
+        self.__quant: int = quantity
+        self.inventory: dict[(str, int),] = [(self.name, self.__quant),]
 
     def update(self, changes):
         pass
@@ -16,7 +21,9 @@ class Material(Entity):
 
 class Machine(Entity):
     def __init__(self, entity_id, name, condition):
-        pass
+        super().__init__(entity_id, name)
+        self.__condit: int = condition
+        self.status: dict[(str, int),] = [(self.name, self.__condit),]
 
     def update(self, changes):
         pass
