@@ -1,0 +1,10 @@
+# Generate Python exercises about recursive tree traversal, propagating return values through recursive calls, and using -1 as a “not found” sentinel.
+
+
+# Generate a coding challenge in Python about writing fail-fast validation guard clauses ordered by computational cost
+
+# Generate a coding challenge in Python about currying with closures that capture mutable default arguments
+
+# Create a bug fixing challenge in Python about incomplete if/else branches causing silent fallthrough bugs
+
+# Personalize an interview question about the difference between None, empty string, and default arguments in Python function design
