@@ -1,6 +1,6 @@
 # Refactor Order Totals
 
-The *calculate_order_total* function calculates a discounted order total, including shipping. Its current implementation repeats calculations and produces incorrect totals for some combinations.
+The `calculate_order_total` function calculates a discounted order total, including shipping. Its current implementation repeats calculations and produces incorrect totals for some combinations.
 
 Refactor the function so that each discount and shipping rule is handled once while preserving its public interface.
 
@@ -18,7 +18,7 @@ Refactor the function so that each discount and shipping rule is handled once wh
 **All inputs use a valid customer type and shipping method.**
 
 # Example
-    calculate_order_total(70, "member", True, "express")
+    `calculate_order_total`(70, "member", True, "express")
     # 70 - 10 - 5 + 15 = 70
 
 Remove redundant temporary values, repeated condition checks, and duplicated calculations while ensuring all tests pass.

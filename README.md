@@ -20,3 +20,7 @@ Completed projects:
 --  *bookbot.py*
     Python "bot" script to assess alphanumeric characters are present in a .txt file.
     Returns an output of the number of occurrences of each character type.
+
+-- *asteroids**
+    Asteroids arcade game built in Python and PyGame using OOP, vectors, collision detection, and game loops.
+    Date Completed: 18/08/2026

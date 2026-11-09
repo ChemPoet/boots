@@ -2,14 +2,14 @@
 
 Complete the notification classes and the **send_notifications** function.
 
-Each notification type stores its delivery details and provides a *send()* method with its own output format:
+Each notification type stores its delivery details and provides a `send()` method with its own output format:
 
 -- **EmailNotification(address, subject)** returns **Email to <address>: <subject>**
 -- **SMSNotification(phone_number, message)** returns **SMS to <phone_number>: <message>**
 -- **PushNotification(username, message)** returns **Push for <username>: <message>**
 
 **send_notifications(notifications)** accepts a list containing any mix of these notification objects.
-Call the shared *send()* method on each object and return their results in a new list, preserving the original order.
+Call the shared `send()` method on each object and return their results in a new list, preserving the original order.
 
 For example:
 
